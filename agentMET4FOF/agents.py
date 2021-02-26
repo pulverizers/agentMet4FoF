@@ -9,7 +9,7 @@ import time
 from collections import deque
 from io import BytesIO
 from threading import Timer
-from typing import Any, Callable, Dict, List, Optional, Union
+from typing import Any, Callable, Dict, Iterable, List, Optional, Sized, Tuple, Union
 
 import matplotlib.figure
 import matplotlib.pyplot as plt
@@ -759,6 +759,7 @@ class AgentBuffer:
             New incoming data
 
         Returns
+        -------
         any in supported_datatype
             the original buffer with the data appended
         """
