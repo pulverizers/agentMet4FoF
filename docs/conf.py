@@ -50,10 +50,11 @@ html_theme_options = {
     "collapse_navigation": False,
 }
 
-# This should make SciPy documentation available inside our docs.
+# This should make Python built-in, Pandas, SciPy, PyDynamic and time-series-metadata
+# documentation available inside our docs.
 intersphinx_mapping = {
-    "NumPy": ("https://numpy.org/doc/stable/", None),
-    "Pandas": ("http://pandas.pydata.org/pandas-docs/dev", None),
+    "Python": ("http://docs.python.org/", None),
+    "pd": ("http://pandas.pydata.org/pandas-docs/dev", None),
     "SciPy": ("https://docs.scipy.org/doc/scipy/reference", None),
     "PyDynamic": (
         "https://pydynamic.readthedocs.io/en/latest/",
@@ -67,7 +68,19 @@ intersphinx_mapping = {
         "https://time-series-buffer.readthedocs.io/en/latest/",
         None,
     ),
+    "np": (
+        "http://docs.scipy.org/doc/numpy/",
+        None,
+    ),
 }
+# We keep the objects.inv files in our docs folder to get hints on how to specify the
+# cross-references. More on the topic can be found here:
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
+# The objects.inv we gathered by the command:
+# $ python -msphinx.ext.intersphinx https://docs.python.org/3/objects.inv
+# which we took from the linked page (almost at the very bottom at the time of
+# writing this).
+
 
 nbsphinx_allow_errors = True
 
@@ -153,7 +166,7 @@ author = (
 # built documents.
 #
 # The short X.Y version.
-# version = '0.0.1'
+version = '0.6.0'
 # The full version, including alpha/beta/rc tags.
 # release = '0.0.1'
 
